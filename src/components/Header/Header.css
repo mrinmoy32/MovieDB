@@ -1,33 +1,34 @@
-.header{
+.header {
     margin: 0 2.5rem;
     padding: .5rem 0;
-    align-items:center;
+    align-items: center;
     display: flex;
     justify-content: space-between;
 }
 
-.headerLeft, .headerRight{
+.headerLeft,
+.headerRight {
     display: flex;
     align-items: center;
-    
+
 }
 
-a > span{
+a>span {
     margin: 0 30px;
     font-size: 1.3rem;
     cursor: pointer;
     color: white;
 }
 
-.header_icon{
+.header_icon {
     height: 30px;
     width: auto;
     cursor: pointer;
     border-radius: 15px;
-    
+
 
 }
 
-.user_avatar{
+.user_avatar {
     font-size: 2rem;
 }
