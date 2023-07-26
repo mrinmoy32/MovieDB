@@ -1,3 +1,4 @@
+import constants from "./constants";
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
@@ -8,15 +9,15 @@ function Header() {
     <div className="header">
       <div className="headerLeft">
         <Link to="/">
-          <img className="header_icon" src={image} />
+          <img className="header_icon" src={image} alt="MovieDB" />
         </Link>
-        <Link to="/movies/popular" style={{ textDecoration: "none" }}>
+        <Link to={constants.POPULAR_MOVIES_ROUTE} className="link">
           <span>Popular</span>
         </Link>
-        <Link to="/movies/top_rated" style={{ textDecoration: "none" }}>
+        <Link to={constants.TOP_RATED_MOVIES_ROUTE} className="link">
           <span>Top Rated</span>
         </Link>
-        <Link to="/movies/upcoming" style={{ textDecoration: "none" }}>
+        <Link to={constants.UPCOMING_MOVIES_ROUTE} className="link">
           <span>Upcoming</span>
         </Link>
       </div>
