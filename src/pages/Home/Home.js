@@ -8,15 +8,24 @@ function Home() {
   const [popularMovies, setpopularMovies] = useState([]);
   const dataFetchedRef = useRef(false);
 
-  useEffect(() => {
-    if (dataFetchedRef.current) return;
-    dataFetchedRef.current = true;
-    fetch(
+  const fetchPopularMovies = async () => {
+    const response = await fetch(
       "https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US"
-    )
-      .then((res) => res.json())
-      .then((data) => setpopularMovies(data.results));
+    );
+    const data = await response.json();
+    return data.results;
+  };
+
+  useEffect(() => {
+    const getPopularMovies = async () => {
+      if (dataFetchedRef.current) return;
+      dataFetchedRef.current = true;
+      const movies = await fetchPopularMovies();
+      setpopularMovies(movies);
+    };
+    getPopularMovies();
   }, []);
+
   return (
     <div>
       <div className="poster">
