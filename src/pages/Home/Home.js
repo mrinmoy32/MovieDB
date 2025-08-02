@@ -39,10 +39,10 @@ function Home() {
                 </div>
                 <div className="posteImage_overlay">
                   <div className="posterImage_runtime">
-                    {movie ? movie.release_date : ""}
                     <div className="posterImage_title">
                       {movie ? movie.title : ""}
                     </div>
+                    {movie ? movie.release_date : ""}
                     <div className="posterImage_rating">
                       Ratings:
                       {movie ? movie.vote_average : ""}
