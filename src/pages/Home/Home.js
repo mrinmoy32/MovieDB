@@ -9,7 +9,7 @@ import { usePopularMovies } from "../../hooks/usePopularMovies";
 
 function Home() {
   const { data: popularMovies = [], isLoading, isError, error } = usePopularMovies();
-
+  console.log("popularMovies", popularMovies);
   return (
     <div>
       <div className="poster">
@@ -40,6 +40,9 @@ function Home() {
                 <div className="posteImage_overlay">
                   <div className="posterImage_runtime">
                     {movie ? movie.release_date : ""}
+                    <div className="posterImage_title">
+                      {movie ? movie.title : ""}
+                    </div>
                     <div className="posterImage_rating">
                       Ratings:
                       {movie ? movie.vote_average : ""}
